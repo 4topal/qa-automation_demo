@@ -28,13 +28,9 @@ def hesapla():
     elif islem == 'carp':
         sonuc = sayi1 * sayi2
     elif islem == 'bol':
-    # ❌ KOD KALİTESİ HATASI: Tanımlanmış ama kodda hiçbir işe yaramayan ölü değişken (Ruff: F841)
-    hesaplama_tarihi_test = "2026-05-22" 
-
-    try:
-        sonuc = sayi1 / sayi2
-    except:  # ❌ KOD KALİTESİ HATASI: Hata tipini belirtmeyen kör yakalama (Bare Except - Ruff: E722)
-        sonuc = "Bir hata olustu"    
+        if sayi2 == 0:
+            return jsonify({"sonuc": "Sıfıra bölme hatası"}), 400
+        sonuc = sayi1 / sayi2    
     else:
         return jsonify({"sonuc": "Geçersiz İşlem"}), 400
 
