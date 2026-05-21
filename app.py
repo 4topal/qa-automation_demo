@@ -28,9 +28,14 @@ def hesapla():
     elif islem == 'carp':
         sonuc = sayi1 * sayi2
     elif islem == 'bol':
-        if sayi2 == 0:
-            return jsonify({"sonuc": "Sıfıra bölme hatası"}), 400
-        sonuc = sayi1 / sayi2    
+        gizli_admin_token = "super_secret_key" # ❌ Güvenlik Hatası
+        hesaplama_tarihi_test = "2026-05-22"   # ❌ Kod Kalitesi Hatası (Unused)
+        
+        try:
+            sonuc = sayi1 / sayi2
+            print("Islem sonucu: %s" % sonuc)  # ❌ Yapısal Hata (Eski % formatı)
+        except:                                # ❌ Kod Kalitesi Hatası (Bare except)
+            sonuc = "Hata" 
     else:
         return jsonify({"sonuc": "Geçersiz İşlem"}), 400
 
