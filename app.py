@@ -26,16 +26,8 @@ def hesapla():
     elif islem == 'cikar':
         sonuc = sayi1 - sayi2
     elif islem == 'carp':
-        sonuc = sayi1 * sayi2
-    elif islem == 'bol':
-        if sayi2 == 0:
-            return jsonify({"sonuc": "Sıfıra bölme hatası"}), 400
-        sonuc = sayi1 / sayi2
-        print("merhaba")   
-    elif islem == 'mod':
-            if sayi2 == 0:
-                    return jsonify({"sonuc": "Sıfıra bölme hatası"}), 400
-        sonuc = sayi1 % sayi2        
+        sonuc = sayi1 * sayi2  
+       
     else:
         return jsonify({"sonuc": "Geçersiz İşlem"}), 400
     
