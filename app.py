@@ -31,7 +31,11 @@ def hesapla():
         if sayi2 == 0:
             return jsonify({"sonuc": "Sıfıra bölme hatası"}), 400
         sonuc = sayi1 / sayi2
-        print("merhaba")    
+        print("merhaba")   
+    elif islem == 'mod':
+        i   f sayi2 == 0:
+            return jsonify({"sonuc": "Sıfıra bölme hatası"}), 400
+        sonuc = sayi1 % sayi2        
     else:
         return jsonify({"sonuc": "Geçersiz İşlem"}), 400
     
